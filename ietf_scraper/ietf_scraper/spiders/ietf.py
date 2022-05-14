@@ -7,4 +7,6 @@ class IetfSpider(scrapy.Spider):
     start_urls = ['http://pythonscraping.com/']
 
     def parse(self, response):
+        # title = response.css('span.title:text').get()
+        title = response.xpath('//span[@class="title"]/text()').get()
         pass
